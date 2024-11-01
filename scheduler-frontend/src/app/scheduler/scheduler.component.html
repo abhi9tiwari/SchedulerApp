@@ -1,0 +1,45 @@
+<!-- scheduler.component.html -->
+<div class="container">
+  <div class="card">
+    <h2 class="title">Event Scheduler</h2>
+
+    <form class="form" (submit)="addEvent(); $event.preventDefault()">
+      <div class="form-group">
+        <label for="start">Start Time:</label>
+        <input
+          type="number"
+          [(ngModel)]="start_time"
+          name="start"
+          min="0"
+          max="24"
+          required
+          placeholder="Enter start time (0-24)"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="end">End Time:</label>
+        <input
+          type="number"
+          [(ngModel)]="end_time"
+          name="end"
+          min="0"
+          max="24"
+          required
+          placeholder="Enter end time (0-24)"
+        />
+      </div>
+
+      <button type="submit" class="btn-primary">Add Event</button>
+    </form>
+
+    <p class="message" *ngIf="message">{{ message }}</p>
+
+    <h3 class="subtitle">Scheduled Events</h3>
+    <ul class="event-list">
+      <li class="event-item" *ngFor="let event of events">
+        <span class="event-time">{{ event.start_time }}:00 - {{ event.end_time }}:00</span>
+      </li>
+    </ul>
+  </div>
+</div>
