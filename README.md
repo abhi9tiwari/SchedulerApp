@@ -15,7 +15,6 @@ GET /getEvents
     Retrieves all scheduled events.
 
 Thought Process for Event Scheduler Project: 
-
 1. Understanding the Requirements
 The primary requirements for this project were:
     Build a scheduling system that allows users to add events within a 24-hour day.
